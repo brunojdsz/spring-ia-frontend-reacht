@@ -3,6 +3,7 @@ import { useState } from 'react';
 import TalkWithAI from './pages/chat/TalkWithAI';
 import RecipeGenerator from './pages/recipe/RecipeGenerator';
 import ImageGenerator from './pages/image/ImageGenerator';
+import AudioUploader from './pages/audio/AudioUploader';
 
 function App() {
 
@@ -29,10 +30,16 @@ function App() {
         onClick={() => handleTabChange('image-generator')}>
           Generate Images
       </button>
+       <button 
+        className={activeTab === 'audio-trascribe' ? 'active' : ''}
+        onClick={() => handleTabChange('audio-trascribe')}>
+          Audio trascribe
+      </button>
       <div>
         {activeTab === 'ask-ai' && <TalkWithAI/>}
         {activeTab === 'recipe-generator' && <RecipeGenerator/>}
         {activeTab === 'image-generator' && <ImageGenerator/>}
+        {activeTab === 'audio-trascribe' && <AudioUploader/>}
       </div>
     </div>
   );
